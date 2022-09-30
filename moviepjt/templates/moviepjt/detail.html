@@ -2,16 +2,15 @@
 
 {% block content %}
 
-
 <div class="container text-center">
   <h1>제목: {{ review.title }}</h1>
   <h3>{{ review.content }}</h3>
   <!-- 수정 버튼 -->
-  <a class="btn btn-success" href="{% url 'moviepjt:edit' review.pk %}">수정</a>
+  <a class="btn violet" href="{% url 'moviepjt:edit' review.pk %}">수정</a>
   <!-- 삭제 버튼 -->
-  <a class="btn btn-success" href="{% url 'moviepjt:delete' review.pk %}">삭제</a>
+  <a class="btn dark_violet" href="{% url 'moviepjt:delete' review.pk %}">삭제</a>
   <!-- 돌아가기 버튼 -->
-  <a type="button" class="btn btn-success px-5" href="{% url 'moviepjt:index' %}"><span class="fw-bold">BACK</span></a>
+  <a type="button" class="btn violet px-5" href="{% url 'moviepjt:index' %}"><span class="fw-bold">BACK</span></a>
 </div>
 
 {% endblock content %}

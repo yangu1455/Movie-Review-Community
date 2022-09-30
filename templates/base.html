@@ -8,9 +8,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Movie Review Community</title>
+    <style>
+        .violet {
+            color: rgb(255, 255, 255);
+            background: rgb(206, 147, 255);
+        }
+
+        .dark_violet {
+            color: rgb(255, 255, 255);
+            background: rgb(153, 31, 252);
+        }
+
+        @font-face {
+            font-family: EF;
+            src: url(../templates/font/Nabla-Regular.ttf);
+        }
+
+        .ef_font {
+            font-family: EF;
+        }
+    </style>
 </head>
 
-<body>
+<body class="container my-5"
+    style="background-image: url('https://i.pinimg.com/564x/3f/ba/d9/3fbad97c5829c3df9d857dae7857c7ce.jpg')">
     {% block content %}
 
     {% endblock content %}
