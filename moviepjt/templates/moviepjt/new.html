@@ -1,26 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="{% url 'moviepjt:create' %}">
-    <!-- title -->
-    <div class="input-group mb-3">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon1">제목</button>
-        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-            aria-describedby="button-addon1" name="title">
-    </div>
+<div class="container p-5">
+    <form action="{% url 'moviepjt:create' %}">
+        <!-- title -->
+        <div class="input-group mb-3">
+            <button class="btn btn-outline-light text-white" type="button" id="button-addon1">제목</button>
+            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                aria-describedby="button-addon1" name="title">
+        </div>
 
-    <!-- content -->
-    <div class="input-group mb-3">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon1">내용</button>
-        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-            aria-describedby="button-addon1" name="content">
-    </div>
+        <!-- content -->
+        <div class="input-group mb-3">
+            <button class="btn btn-outline-light text-white" type="button" id="button-addon1">내용</button>
+            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                aria-describedby="button-addon1" name="content">
+        </div>
 
-    <!-- button -->
-    <div class="container text-center">
-        <button type="submit" class="btn violet m-5 px-5 fw-bold">리뷰 쓰기</button>
-        <a type="button" class="btn violet px-5" href="{% url 'moviepjt:index' %}"><span class="fw-bold">BACK</span></a>
-    </div>
-</form>
+        <!-- button -->
+        <div class="container text-center">
+            <button type="submit" class="btn violet m-5 px-5 fw-bold">리뷰 쓰기</button>
+            <a type="button" class="btn violet px-5" href="{% url 'moviepjt:index' %}"><span
+                    class="fw-bold">BACK</span></a>
+        </div>
+    </form>
+
+</div>
+
 
 {% endblock content %}

@@ -1,32 +1,90 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- 네비바 -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-3 fw-bold text-white text-white">M R C</a>
+        <div class="d-flex mx-3">
+            <li class="nav-item list-unstyled mx-3">
+                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item list-unstyled mx-3">
+                <a class="nav-link active text-white" href="#">About</a>
+            </li>
+            <li class="nav-item list-unstyled mx-3">
+                <a class="nav-link active text-white " href="#">Members</a>
+            </li>
+            <li class="nav-item list-unstyled mx-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-person-circle"
+                    viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+            </li>
+            <li class="nav-item list-unstyled">
+                <a class="nav-link text-white">Log In</a>
+            </li>
+        </div>
 
+    </div>
+</nav>
+<h1 class="text-center my-5 ef_font fw-bold p-5 text-white">Movie Review Community</h1>
+<!-- 내용 -->
+<div class="container bg-light px-5 pt-3" style="width: 950px;">
+    <!-- 헤드 -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="d-flex">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active font-monospace" aria-current="page" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active font-monospace" href="#">All Posts</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active font-monospace" href="#">My Posts</a>
+                    </li>
+                </div>
 
-<h1 class="text-center my-5 ef_font">Movie Review Community</h1>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
-<div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">리뷰번호</th>
-                <th scope="col">리뷰 제목</th>
-                <th scope="col">작성 시간</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for review in reviews %}
-            <tr>
-                <th scope="row">{{ review.id }}</th>
-                <td><a href="{% url 'moviepjt:detail' review.id %}">{{ review.title }}</a>
-                </td>
-                <td>{{ review.created_at }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <!-- 테이블 -->
+    <div class="container m-3 mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">리뷰번호</th>
+                    <th scope="col">리뷰 제목</th>
+                    <th scope="col">작성 시간</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                <tr>
+                    <th scope="row">{{ review.id }}</th>
+                    <td><a href="{% url 'moviepjt:detail' review.id %}">{{ review.title }}</a>
+                    </td>
+                    <td>{{ review.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-    <button class=" btn violet ef_font" type="button" onclick="location.href='{% url 'moviepjt:new'%}'">리뷰 작성</button>
+        <!-- 리뷰작성 버튼 -->
+        <button class=" btn violet ef_font mt-3 mb-5" type="button"
+            onclick="location.href='{% url 'moviepjt:new'%}'">Create
+            New Post</button>
 
+    </div>
 </div>
+
 {% endblock content %}
