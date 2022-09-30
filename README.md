@@ -2,7 +2,7 @@
 
 <br>
 
-![MRC 페어프로젝트 영상](../220930%20Django%208%EC%9D%BC%EC%B0%A8%20%ED%8E%98%EC%96%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/Movie-Review-Community.gif)
+![MRC 페어프로젝트 영상](/Movie-Review-Community.gif)
 
 <br>
 
