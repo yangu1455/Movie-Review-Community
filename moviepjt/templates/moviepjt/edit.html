@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- 특정 pk를 가진 데이터를 불러오기 위해 pk를 동적 인자로 전달 -->
+<form action="{% url 'moviepjt:update' review.pk %}">
+  <!-- title -->
+  <div class="input-group mb-3">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon1">제목</button>
+    <input type="text" class="form-control" name="title" value="{{ review.title }}">
+  </div>
+
+  <div class="input-group mb-3">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon1">내용</button>
+    <input type="text" class="form-control" name="content" value="{{ review.content }}">
+  </div>
+
+  <!-- 수정 버튼 -->
+  <div class="container text-center">
+    <button type="submit" class="btn btn-outline-success m-5 px-5 fw-bold">리뷰 수정</button>
+  </div>
+</form>
+
+{% endblock content %}
